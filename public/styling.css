@@ -1,0 +1,264 @@
+body{
+        /* background-color: transparent; */
+        background:url(/underthesea.jpg) center center fixed;
+        background-size: cover;
+        /*font-family: Arvo, serif;*/
+	font-family: Dyslexic!important;
+        /* background: url("milky_way_1024x768.jpg") no-repeat center;  */
+        /* background-attachment: fixed; */
+}
+
+video#bgvideo{
+    position: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    z-index: -100;
+}
+
+@media (max-device-width:768px){
+    #bgvideo{
+        display:none;
+    }
+}
+
+.navbar {
+    position: relative;
+    min-height: 30px;
+    height: 14%;
+    /* height: 80px; */
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.brand{
+        max-width: 100%;
+/*   vertical-align: top;
+    border: 0;
+        display: block;
+    float: left;
+*/  
+    /* padding: 0px 15px 0px; */
+    /* margin-left: 20px; */
+    margin-top: -2px;
+     /* width: 55px; */
+     height: 55px;
+}
+
+/* ..navigation bar */
+.navbar-inverse{
+    background: rgba(0,0,0,0.5);
+}
+
+.nav li{
+    cursor: pointer;
+    /* color: #fff; */
+    font: 19px Arvo, serif;
+    /* font: 19px 'ExoBold', Arial, sans-serif; */
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+/*    text-decoration: none;
+    display: inline-block;
+    margin-right: 100px;
+    width: 0px;
+    border-bottom: 2px solid blue;    
+    -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+*/
+}
+
+.nav li:hover{
+    border-bottom: 2px solid #00FFB8;
+    margin-bottom: 8px;
+    /* padding-bottom: 9px 0; */
+/*    -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+    border-bottom: 2px solid blue;
+    width: 70px;
+    margin-right: 60px;
+*/
+}
+
+body{
+    background-color: transparent;
+}
+
+/* jumbotron */
+.jumbotron{
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    letter-spacing: 2.5px;
+}
+
+/* limit the width of the icons section */
+.container{
+    max-width: 1000px;
+}
+/* .icons{
+    width: 50px;    
+    color: #fff;
+} */
+
+/* icons section using bootstrap system */
+.bodyimage{
+    width: 100px;
+}
+
+.col-md-4{
+    text-align: center;
+    color: #fff;
+}
+
+.icons p{
+    font-size: 15px;
+}
+/* 
+.icons img{
+    height: 80px;    
+} */
+
+/* contact button */
+.contact1{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.btn{
+    background-color: rgba(0, 255, 184, 0.5);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 70px;
+    letter-spacing: 1.3px;
+}
+
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+}
+
+/*.footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: grey;
+    font-size: 15px;
+    //padding: 10px 0;
+    padding:5px; bottom:0px;
+    position: static;
+}*/
+
+p{
+    
+
+    color: yellow;
+
+}
+/* use media queries to change icons sizes in small devices */
+@media (max-width: 768px){
+    .bodyimage{
+        height: 40px;
+    }
+    .brand{
+        /* width: 40px; */
+        height: 30px;
+    }
+    .icons p{
+        font-size: 15px;
+        text-align: center;
+        padding-top: 30px;
+    }
+}
+
+/* element hover animations */
+
+.contact2 li{transition: background-color 0.3s ease-in;position:relative;}
+.contact2 li:hover{background-color:transparent;}
+
+.contact2 li:before {
+    content: "";
+    height: 0px;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    left: 0; top: -3px;
+    
+    transition: height 300ms;
+}
+
+.contact2 li:after {
+    content: "";
+    height: 0px;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    left: 0; bottom: -3px;
+    
+    transition: height 300ms;
+}
+
+.contact2 li:hover:before{height: 6px;}
+.contact2 li:hover:after{height: 6px;}
+
+/* General Link settings */
+.contact2 li {
+/* margin:25px 2% 0 2%; */
+display: inline-block;
+/* width: 15%; */
+text-align: center;
+padding: 5px;
+/* background-color: #E7DAC6; */
+}
+
+/*progressive underline effect*/
+.lineex {
+	position: relative;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 2px solid blue;    
+    margin-right: 39px; 
+    width: 0px;
+    -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+}
+
+.lineex:hover {
+    -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+    border-bottom: 2px solid blue;
+    width: 30px;
+    margin-right: 9px;
+}
+
+.address
+{
+    display:none;
+    visibility:hidden;
+}
+/* @grid-float-breakpoint:     @screen-tablet;
+If you want to keep the collapsed a little longer you can adjust it like such:
+@grid-float-breakpoint:     @screen-desktop; (992px break-point)
+or expand sooner
+@grid-float-breakpoint:     @screen-phone (480px break-point) */
+
+.contact1 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+	/*position: absolute;*/
+	/*z-index: 1;*/
+}
+
+.contact1:hover .tooltiptext {
+    visibility: visible;
+}

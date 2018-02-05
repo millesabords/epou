@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <video autoplay loop muted id="bgvideo">
+    <source src="/mov10485.mp4" type="video/mp4"></source>
+  </video>
+
+  <% include ../partials/nav.ejs %>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Need a computerized solution?</h1>
+    </div>
+  </div>
+
+  <div class="icons">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/money.png" class="bodyimage">
+          <h2>Web site solution</h2>
+          <p>Get in touch for an immediate no obligation quote!</p>
+        </div>
+        <div class="col-md-4">
+          <img src="/money4.png" class="bodyimage">
+          <h2>software solution</h2>
+          <p>We will agree on a deadline and commit to it.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="/money3.png" class="bodyimage">
+          <h2>complete solution</h2>
+          <p>We will deliver your website on time with the best quality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact1">
+    <div class="container">
+      <a href="#" class="btn">Get in touch</a>
+      <span class="tooltiptext">dude</span>
+    </div>
+  </div>
+
+  <div class="contact2" id="contact">
+    <ul>
+      <!-- input field used instead of just p element because we want to be able to copy its content to clipboard -->
+      <li>
+          <input type="text" value="dh.clerc@gmail.com" id="mailAddrHolder" style="background: transparent; border: none;" readonly>
+          <button onclick="copyTextToClipBoard()" title="clic to copy this email address into your clipboard">Copy mail to clipboard</button>
+      </li>
+      <li>
+          +33 (0)6 20197704
+      </li>
+      </ul>
+<form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <label for="name">Name:</label>
+    <input type='text' name='mailerName' placeholder="Your name.." pattern=".{5,40}" required title="5 to 40 characters" id="mailerName">
+    <label for="email">Email:</label>
+    <input type='text' name='mailerMail' type="email" required pattern=".{5,40}">
+    <label for="address" class='address'>Address:</label>
+    <input type='text' name='address' class='address' value="tralala">
+    <label for="message">Votre message</label>
+    <textarea name="mailerMsg" id="mailerMsg" placeholder="Your project." pattern=".{1,5000}" required></textarea>
+    <input type='submit' value='submit'>
+    <input type='reset'  value='reset'>
+</form>
+
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>&copy; Develop with Henry.</p>
+    </div>
+  </div>
+
+  <script>
+	var formProcessed = "<%= formProcessed %>";
+  </script>
+<script src="/myElements.js"></script>
+
+</body>
+</html>
