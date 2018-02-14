@@ -12,11 +12,15 @@
 
   <% include ../partials/nav.ejs %>
 
-  <div class="jumbotron">
+<div class="verticalSpaceX"></div>
+
+<div class="jumbotron">
     <div class="container">
       <h1>Need a computerized solution?</h1>
     </div>
   </div>
+
+<div class="verticalSpaceX"></div>
 
   <div class="icons">
     <div class="container">
@@ -24,7 +28,13 @@
         <div class="col-md-4">
           <img src="/money.png" class="bodyimage">
           <h2>Web site solution</h2>
-          <p>Get in touch for an immediate no obligation quote!</p>
+
+<p>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+</p>
         </div>
         <div class="col-md-4">
           <img src="/money4.png" class="bodyimage">
@@ -42,20 +52,64 @@
 
   <div class="contact1">
     <div class="container">
-      <a href="#" class="btn">Get in touch</a>
-      <span class="tooltiptext">dude</span>
+      <a href="#contact" class="btn">Get in touch</a>
+	  <!-- <span class="tooltiptext">contact form</span> -->
     </div>
   </div>
 
-  <div class="contact2" id="contact">
+<div class="verticalSpaceX"></div>
+
+  <!-- not so nice pie chart from Chart.js -->  
+ <div class="skills">
+    <div class="container">
+      <div class="row">
+			  <!--TODO: a noscript section in case user desactivated javascript -->
+			<div id="chartdiv1" class="col-md-4 chartdivs"></div>
+			<div id="chartdiv2" class="col-md-4 chartdivs"></div>
+			<div id="chartdiv3" class="col-md-4 chartdivs"></div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- vertical spacing section -->
+<!--<ol style="visibility:hidden;">
+	<li>&nbsp;</li>
+	<br>
+</ol>
+-->
+
+<div class="verticalSpaceX"></div>
+
+<div class="contact2" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+				<p style="margin-top:30px;">
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
+enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
+				</p>
+		</div>
+        <div class="col-md-5">
     <ul>
       <!-- input field used instead of just p element because we want to be able to copy its content to clipboard -->
       <li>
-          <input type="text" value="dh.clerc@gmail.com" id="mailAddrHolder" style="background: transparent; border: none;" readonly>
-          <button onclick="copyTextToClipBoard()" title="clic to copy this email address into your clipboard">Copy mail to clipboard</button>
+			  <label>Tel: +33 (0)6 20197704</label>
       </li>
       <li>
-          +33 (0)6 20197704
+			  <label>fhc.develop@gmail.com</label>>
+          <input type="text" value="fhc.develop@gmail.com" id="mailAddrHolder" style="background: transparent; border: none;" style="display:inline;" hidden readonly>
+      </li>
+      <li>
+          <input type="button" onclick="copyTextToClipBoard()" class="btn" title="clic to copy this email address into your clipboard" value="Copy mail to clipboard">
       </li>
       </ul>
 <form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()">
@@ -72,18 +126,29 @@
     <input type='reset'  value='reset'>
 </form>
 
+    </div>
+  </div>
+    </div>
   </div>
 
-  <div class="footer">
+  <!-- <div class="footer">
     <div class="container">
       <p>&copy; Develop with Henry.</p>
     </div>
-  </div>
+  </div> -->
 
   <script>
 	var formProcessed = "<%= formProcessed %>";
   </script>
 <script src="/myElements.js"></script>
+<script src="/myCharts.js"></script>
 
 </body>
+
+<div class="verticalSpaceX"></div>
+
+<footer>
+    <p style="text-align: right; margin-right:20px;">&copy; powered by  with Henry.</p>
+</footer>
+
 </html>

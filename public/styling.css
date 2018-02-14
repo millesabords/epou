@@ -127,14 +127,37 @@ body{
     margin-bottom: 100px;
 }
 
+.contact2{
+		border-top: 6px solid #013655;
+		border-bottom: 6px solid #013655;
+		border-radius: 5px;
+    background-color: #0b4b71;
+	background: linear-gradient(to top right, #0b4b71, #013655, #5a677c);
+    /* background: rgba(0,0,0,0.6); */
+    position: relative;
+    z-index: -99;
+	/* displayP inline-block; */
+    padding: 20px 0 20px 0px;
+    color: #72848f;
+}
+
 .btn{
     background-color: rgba(0, 255, 184, 0.5);
     border: none;
     border-radius: 10px;
     color: #fff;
-    font-size: 18px;
-    padding: 10px 70px;
     letter-spacing: 1.3px;
+}
+
+.contact1 + .btn{
+    padding: 10px 70px;
+    font-size: 18px;
+}
+
+.contact2 + .btn{
+    padding: 8px 30px;
+    font-size: 10px;
+	display: inline;
 }
 
 .btn:hover{
@@ -153,11 +176,20 @@ body{
 }*/
 
 p{
-    
-
+    /* color: #778196; */
     color: yellow;
-
 }
+
+.verticalSpaceX{ 
+width:100%; 
+min-height:1px; 
+margin-top:40px; 
+margin-bottom:40px;  
+display:inline-block; 
+position:relative;
+}
+
+
 /* use media queries to change icons sizes in small devices */
 @media (max-width: 768px){
     .bodyimage{
@@ -172,6 +204,15 @@ p{
         text-align: center;
         padding-top: 30px;
     }
+	.verticalSpaceX{ 
+			width:100%; 
+			min-height:0; 
+			margin-top:0; 
+			margin-bottom:0;  
+			display:none; 
+			position:relative;
+	}
+
 }
 
 /* element hover animations */
@@ -207,7 +248,8 @@ p{
 /* General Link settings */
 .contact2 li {
 /* margin:25px 2% 0 2%; */
-display: inline-block;
+/* display: inline-block; */
+list-style-type: none;
 /* width: 15%; */
 text-align: center;
 padding: 5px;
@@ -245,7 +287,7 @@ If you want to keep the collapsed a little longer you can adjust it like such:
 or expand sooner
 @grid-float-breakpoint:     @screen-phone (480px break-point) */
 
-.contact1 .tooltiptext {
+.tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -261,4 +303,9 @@ or expand sooner
 
 .contact1:hover .tooltiptext {
     visibility: visible;
+}
+
+.chartdivs {
+  min-width: 200px;
+  height: 300px;
 }

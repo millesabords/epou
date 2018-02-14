@@ -1,3 +1,5 @@
+Do not forget to add symbolic links for myroutes and controllers like so:
+$cd node_modules && ln -s ../myroutes . #idem for controllers
 <!-- not really good for production: todo separate debug and prod parts -->
 <script src="<%=debugTimeUrl%>"></script>
 

@@ -75,3 +75,5 @@ if(formProcessed === "true"){
    $('#alert').fadeOut('slow')
 	console.log("defined");
 }
+
+
