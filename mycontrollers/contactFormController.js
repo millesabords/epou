@@ -17,6 +17,31 @@ const { matchedData, sanitize, checkbody } = require('express-validator/filter')
 */
 const Joi = require('joi');
 
+/*
+const nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'DH.clerc@gmail.com',
+    pass: 'todo npm install nodemailer ip and test this'
+  }
+});
+var localIpAddress = require("ip").address();
+var mailOptions = {
+  from: 'DH.clerc@gmail.com',
+  to: 'fhc.develop@gmail.com',
+  subject: 'Message through personnal website at ' + localIpAddress,
+  text: 'That was easy!'
+};
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+*/
+
 const userMailerSchema = Joi.object({
   _csrf: Joi.string().required(),
   mailerName: Joi.string().min(2).max(60).required(),

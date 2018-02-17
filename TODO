@@ -1,1 +1,3 @@
-replace validator broken system with express-validator instead
+- check if "copy mail to clipboard" button is functionnal 
+- replace file writting system for contact by nodemailer system
+- replace validator broken system with express-validator instead

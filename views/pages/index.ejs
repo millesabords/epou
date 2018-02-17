@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <% include ../partials/header.ejs %>
 </head>
@@ -26,7 +26,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="/money.png" class="bodyimage">
+          <img src="/money.png" class="bodyimage" alt="Pricefull">
           <h2>Web site solution</h2>
 
 <p>
@@ -37,12 +37,12 @@ eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
 </p>
         </div>
         <div class="col-md-4">
-          <img src="/money4.png" class="bodyimage">
+          <img src="/money4.png" class="bodyimage" alt="Pricefull">
           <h2>software solution</h2>
           <p>We will agree on a deadline and commit to it.</p>
         </div>
         <div class="col-md-4">
-          <img src="/money3.png" class="bodyimage">
+          <img src="/money3.png" class="bodyimage" alt="Pricefull">
           <h2>complete solution</h2>
           <p>We will deliver your website on time with the best quality.</p>
         </div>
@@ -105,23 +105,33 @@ enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
 			  <label>Tel: +33 (0)6 20197704</label>
       </li>
       <li>
-			  <label>fhc.develop@gmail.com</label>>
-          <input type="text" value="fhc.develop@gmail.com" id="mailAddrHolder" style="background: transparent; border: none;" style="display:inline;" hidden readonly>
+			  <label>fhc.develop@gmail.com</label>
+          <input type="text" value="fhc.develop@gmail.com" id="mailAddrHolder" hidden readonly>
       </li>
       <li>
           <input type="button" onclick="copyTextToClipBoard()" class="btn" title="clic to copy this email address into your clipboard" value="Copy mail to clipboard">
       </li>
       </ul>
-<form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()">
-    <input type="hidden" name="_csrf" value="{{csrfToken}}">
-    <label for="name">Name:</label>
-    <input type='text' name='mailerName' placeholder="Your name.." pattern=".{5,40}" required title="5 to 40 characters" id="mailerName">
-    <label for="email">Email:</label>
-    <input type='text' name='mailerMail' type="email" required pattern=".{5,40}">
-    <label for="address" class='address'>Address:</label>
+<form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()" class="contact_form">
+  <table>
+    <tr>
+      <td align="left"><label for="name">Name:</label></td>
+      <td align="right"><input type='text' name='mailerName' placeholder="Your name.." pattern=".{5,40}" required title="5 to 40 characters" size="30" id="mailerName"></td>
+    </tr>
+    <tr>
+      <td align="left"><label for="email">Email:</label></td>
+      <td align="right"><input name='mailerMail' type="email" required pattern=".{5,40}" placeholder="mymail@addr.com" size="30"></td>
+    </tr>
+    <tr>
+      <td align="left"><label for="message">Message:</label></td>
+      <td align="right"><textarea name="mailerMsg" id="mailerMsg" placeholder="Your project." pattern=".{1,5000}" rows="4" cols="50" required></textarea></td>
+    </tr>
+	
+  </table>
+  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+  <!--    <label for="address" class='address'>Address:</label>
     <input type='text' name='address' class='address' value="tralala">
-    <label for="message">Votre message</label>
-    <textarea name="mailerMsg" id="mailerMsg" placeholder="Your project." pattern=".{1,5000}" required></textarea>
+  -->
     <input type='submit' value='submit'>
     <input type='reset'  value='reset'>
 </form>
@@ -143,12 +153,12 @@ enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
 <script src="/myElements.js"></script>
 <script src="/myCharts.js"></script>
 
-</body>
-
 <div class="verticalSpaceX"></div>
 
 <footer>
     <p style="text-align: right; margin-right:20px;">&copy; powered by  with Henry.</p>
 </footer>
+
+</body>
 
 </html>

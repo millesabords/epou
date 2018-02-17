@@ -133,10 +133,8 @@ body{
 		border-radius: 5px;
     background-color: #0b4b71;
 	background: linear-gradient(to top right, #0b4b71, #013655, #5a677c);
-    /* background: rgba(0,0,0,0.6); */
     position: relative;
-    z-index: -99;
-	/* displayP inline-block; */
+    z-index: 99;
     padding: 20px 0 20px 0px;
     color: #72848f;
 }
@@ -217,7 +215,17 @@ position:relative;
 
 /* element hover animations */
 
-.contact2 li{transition: background-color 0.3s ease-in;position:relative;}
+.contact2 li{
+	transition: background-color 0.3s ease-in;
+	position:relative;
+/* margin:25px 2% 0 2%; */
+/* display: inline-block; */
+	list-style-type: none;
+	text-align: center;
+	padding: 5px;
+/* background-color: #E7DAC6; */
+/* width: 15%; */
+}
 .contact2 li:hover{background-color:transparent;}
 
 .contact2 li:before {
@@ -245,15 +253,13 @@ position:relative;
 .contact2 li:hover:before{height: 6px;}
 .contact2 li:hover:after{height: 6px;}
 
-/* General Link settings */
-.contact2 li {
-/* margin:25px 2% 0 2%; */
-/* display: inline-block; */
-list-style-type: none;
-/* width: 15%; */
-text-align: center;
-padding: 5px;
-/* background-color: #E7DAC6; */
+.contact2 table>td{
+	/* position:relative; */
+	/* text-align: left; */
+	/* padding: 5px; */
+    width: 80%;
+	size:30;
+    /* clear: both; */
 }
 
 /*progressive underline effect*/
