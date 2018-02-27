@@ -3,7 +3,7 @@
 //var config = require('../config');
 //var nodemailer = require('nodemailer');
 
-const filename = "./public/messages2421.txt";
+const filename = "./contacts/messages2421.txt";
 const fs = require('fs');
 
 /*module.exports = {
@@ -74,6 +74,7 @@ module.exports = function(req, res){
   });
 
   if (ret.error) {
+    console.log("schema not validated.");
     res.status(400).end(ret.error.toString());
     //res.status(400).json(err);
   }
@@ -132,6 +133,9 @@ module.exports = function(req, res){
      const stats = fs.statSync(filename);
      fileSizeInMegabytes = stats.size / 1000000.0;
   }
+		  else{
+		  console.log("could not find " + filename);
+		  }
   if (fileSizeInMegabytes < 4.0){
      let curDate = new Date().toString()//.
         //replace(/T/, ' ').  

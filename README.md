@@ -1,3 +1,6 @@
+docker container run -d -p 5163:5050 -v dockershared01:/usr/src/app/contacts millesabords/pressitenode4
+ls /var/lib/docker/volumes/...
+
 To daemonize, install pm2 and do:
 $ pm2 start app.js
 $ pm2 startup
