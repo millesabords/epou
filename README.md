@@ -1,3 +1,9 @@
+To daemonize, install pm2 and do:
+$ pm2 start app.js
+$ pm2 startup
+<copy/paste the line as asked>
+$ pm2 save
+
 Do not forget to add symbolic links for myroutes and controllers like so:
 $cd node_modules && ln -s ../myroutes . #idem for controllers
 <!-- not really good for production: todo separate debug and prod parts -->

@@ -3,7 +3,8 @@ function copyTextToClipBoard() {
     var succeed = false;
     try {
         var copyText = document.getElementById("mailAddrHolder");
-        copyText.select();
+		copyText.select();
+			console.log(copyText);
         document.execCommand("Copy");
         succeed = true;
     } catch(e) {

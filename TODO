@@ -1,3 +1,5 @@
-- check if "copy mail to clipboard" button is functionnal 
-- replace file writting system for contact by nodemailer system
+- sending contact system to be fixed: enabling write permission in /usr/src/app or using database system?
+- revise global design, mouaaaahhhh
+- delay printing of hidden parts like chartjs using methods helene spoke about
 - replace validator broken system with express-validator instead
+- add pm2 to docker image for daemon monitoring

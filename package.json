@@ -1,14 +1,15 @@
 {
   "name": "node-js-getting-started",
   "version": "0.2.6",
-  "description": "A sample Node.js app using Express 4",
+  "description": "A simple Node.js app",
   "engines": {
     "node": "6.11.1"
   },
   "main": "app.js",
   "scripts": {
+    "preinstall": "npm ln myroutes ../myroutes/; npm ln mycontrollers ../mycontrollers/",
     "start": "node app.js",
-    "test": "node test.js"
+    "test": "node inspect app.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -19,8 +20,11 @@
     "express-rate-limit": "^2.9.0",
     "express-validator": "^4.3.0",
     "helmet": "^3.9.0",
-    "joi": "^13.0.2",
-    "nodemailer": "^4.4.0"
+    "joi": "^13.1.2",
+    "myroutes": "*",
+    "nodemailer": "^4.4.0",
+    "pm2": "^2.10.1",
+    "mycontrollers": "*"
   },
   "devDependencies": {
     "request": "^2.81.0",
@@ -28,11 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/millesabords/epou.git"
   },
   "keywords": [
     "node",
-    "heroku",
     "express"
   ],
   "license": "MIT"
