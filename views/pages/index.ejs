@@ -4,7 +4,7 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body>
+<body onload="loadCharts()">
 
   <% include ../partials/nav.ejs %>
 
@@ -18,11 +18,26 @@
 
 <div class="verticalSpaceX"></div>
 
-  <div class="icons">
+<div class="icons">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 spotlight1">
+          <img src="/tablettesChocolat.png" class="bodyimage" alt="Pricefull">
+        </div>
+        <div class="col-md-4 spotlight2">
+          <img src="/lamatrice2.png" class="bodyimage" alt="Pricefull" style="padding-top:30px;">
+        </div>
+        <div class="col-md-4 spotlight3">
+          <img src="/computerfutur.png" class="bodyimage" alt="Pricefull">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="iconsText">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="/money.png" class="bodyimage" alt="Pricefull">
           <h2>Web site solution</h2>
 
 <p>
@@ -33,12 +48,10 @@ eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
 </p>
         </div>
         <div class="col-md-4">
-          <img src="/money4.png" class="bodyimage" alt="Pricefull">
           <h2>software solution</h2>
           <p>We will agree on a deadline and commit to it.</p>
         </div>
         <div class="col-md-4">
-          <img src="/money3.png" class="bodyimage" alt="Pricefull">
           <h2>complete solution</h2>
           <p>We will deliver your website on time with the best quality.</p>
         </div>
@@ -46,23 +59,45 @@ eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
     </div>
   </div>
 
+<div class="verticalSpaceX"></div>
+ 
+<hr>
+
   <div class="contact1">
     <div class="container">
-      <a href="#contact" class="btn">Get in touch</a>
+      <a href="#contact" class="btn" id="btn1">Get in touch</a>
 	  <!-- <span class="tooltiptext">contact form</span> -->
     </div>
   </div>
 
 <div class="verticalSpaceX"></div>
 
-  <!-- not so nice pie chart from Chart.js -->  
- <div class="skills">
-    <div class="container">
+ <div class="skillsSets">
+    <div class="container-fluid">
       <div class="row">
 			  <!--TODO: a noscript section in case user desactivated javascript -->
 			<div id="chartdiv1" class="col-md-4 chartdivs"></div>
 			<div id="chartdiv2" class="col-md-4 chartdivs"></div>
 			<div id="chartdiv3" class="col-md-4 chartdivs"></div>
+      </div>
+    </div>
+  </div>
+
+ <div class="skillsDescriptions">
+    <div class="container-fluid">
+      <div class="row">
+		<div id="chartdesc1" class="col-md-4 chartdescs">
+          <h2>skillset number one</h2>
+          <p>We will deliver your website on time with the best quality.</p>
+		</div>
+		<div id="chartdesc2" class="col-md-4 chartdescs">
+          <h2>number 22222</h2>
+          <p>We will deliver your website on time with the best quality.</p>
+		</div>
+		<div id="chartdesc3" class="col-md-4 chartdescs">
+          <h2>ayayayayay</h2>
+          <p>We will deliver your website on time with the best quality.</p>
+		</div>
       </div>
     </div>
   </div>
@@ -118,7 +153,7 @@ enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
 			  <input id="mailAddrHolder" value="fhc.develop@gmail.com" readonly>
       </li>
       <li>
-          <input type="button" onclick="copyTextToClipBoard()" class="btn" title="clic to copy this email address into your clipboard" value="Copy mail to clipboard">
+          <input type="button" onclick="copyTextToClipBoard()" class="btn" id="btn2" title="clic to copy this email address into your clipboard" value="Copy mail to clipboard">
       </li>
       </ul>
 <form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()" class="contact_form">
@@ -156,12 +191,6 @@ enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
     </div>
   </div>
 
-  <!-- <div class="footer">
-    <div class="container">
-      <p>&copy; Develop with Henry.</p>
-    </div>
-  </div> -->
-
   <script>
 	var formProcessed = "<%= formProcessed %>";
   </script>
@@ -170,9 +199,9 @@ enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
 
 <div class="verticalSpaceX"></div>
 
-<footer>
-    <p style="text-align: right; margin-right:20px;">&copy; powered by  with Henry.</p>
-</footer>
+<div class="footer">
+    <p style="text-align: right; margin-right:20px;">&copy; Francois Clerc. Powered by Node.Js</p>
+</div>
 
 </body>
 

@@ -1,3 +1,5 @@
+function loadCharts() {
+
 var chart1 = AmCharts.makeChart( "chartdiv1", {
   "type": "pie",
 //  "theme": "light",
@@ -154,3 +156,4 @@ var chart3 = AmCharts.makeChart( "chartdiv3", {
   }]*/
 } );
 
+}

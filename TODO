@@ -1,3 +1,4 @@
+-change times font
 - revise global design, mouaaaahhhh
 - delay printing of hidden parts like chartjs using methods helene spoke about
 - replace validator broken system with express-validator instead
