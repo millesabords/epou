@@ -1,7 +1,7 @@
 /*
  * color-palette "nordic ruby" from crazyegg.com/blog/website-color-palettes
  * #7D1935 | rgba(125, 25, 53, 1)	| purple
- * #4A96AD | rgba(74, 150, 173, 1)	| cyan
+ * #4A96AD | rgba(74, 150, 173, 1)	| turquoise
  * #F5F3EE | rgba(245, 243, 238, 1)	| pale
  * #FFFFFF | white....
  */
@@ -19,6 +19,8 @@ body{
         /* background-attachment: fixed; */
 	height: 100%;
 	min-height: 100%;
+	position:relative;
+	padding-bottom: 4em;/*height of footer*/
 }
 
 h1 {
@@ -36,17 +38,14 @@ h2{
     color: #4A96AD;
 }
 
-@media (max-device-width:768px){
-}
-
 .navbar {
     position: relative;
     min-height: 30px;
     height: 14%;
     /* height: 80px; */
     margin-bottom: 20px;
-    border: 1px solid transparent;
-		/*border-bottom-left-radius: 20px;*/
+    /*border: 1px solid transparent;*/
+		border-radius: 0;
 		/*border-bottom-right-radius: 20px;*/
 }
 
@@ -61,7 +60,10 @@ h2{
     /* margin-left: 20px; */
     margin-top: -6px;
      /* width: 55px; */
-     height: 55px;
+     /*height: 55px;*/
+	 height: 6.5vh;
+/*zoom:2;*/
+/*overflow: auto;*/
 }
 
 /* ..navigation bar */
@@ -77,13 +79,11 @@ h2{
 }
 
 .gradientBackground{
-		  background: linear-gradient(to right,
-		  rgba(125, 25, 53, 1),
-		  rgba(74, 150, 173, 1),
-		  rgba(125, 25, 53, 1));
-		  /*rgba(245, 243, 238, 1),*/
-		  rgba(74, 150, 173, 1),
-		  rgba(125, 25, 53, 1));
+	/*background-color: transparent;*/
+	background-image:url("/colorizedbackground2.png");
+	background-repeat: no-repeat;
+	/*background-position: 8% 0;*/
+	background-size: 100% 100%;
 }
 
 .nav li{
@@ -94,104 +94,129 @@ h2{
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-bottom: 2px solid transparent;
 /*    text-decoration: none;
     display: inline-block;
-    margin-right: 100px;
-    width: 0px;
     border-bottom: 2px solid blue;    
-    -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
 */
 }
 
 .nav li:hover{
-    border-bottom: 2px solid #00FFB8;
-    margin-bottom: 8px;
     /* padding-bottom: 9px 0; */
-/*    -webkit-transition: 0.5s ease;
-            transition: 0.5s ease;
-    border-bottom: 2px solid blue;
-    width: 70px;
-    margin-right: 60px;
+    border-bottom: 2px solid #4A96AD;
+    /*width: 70px;*/
+    /*margin-right: 60px;*/
 */
 }
 
-/* jumbotron */
+.nav li a:active{
+	color: #fff;
+}
+
 .jumbotron{
-    background-color: transparent;
-    /*color: #fff;*/
+	background-color: transparent;
     text-align: center;
-    margin: 0;
-    padding: 30px;
+    /*margin: 0;*/
+	min-height: 60vh;
+    padding: 30vh 0 30vh 0;
     letter-spacing: 2.5px;
 }
 
-/* limit the width of the icons section */
-.container{
-    /*max-width: 1000px;*/
-}
-
-.col-md-4{
-    text-align: center;
-}
-
-/*all divs with a class named like "icons*" */
-div[class^="icons"]{
-    background-color: #7D1935;/*nordic ruby*/
-	padding: 50px 0 0 0;
-	/*border: 1px solid yellow;*/
-}
-
-/* icons section using bootstrap system */
-
 /*pictures*/
-.bodyimage{
-	max-width: 130px;
-	max-height: 120px;
-	position: relative;
-	top: 35px;
-	/*position: absolute;*/
-	/*vertical-align: middle;*/
+.icons{
+    background-color: #7D1935;/*nordic ruby*/
+	padding-bottom: 10vh;
 }
 
-/*circle behind pictures*/
-div[class*="spotlight"]{
-	background-color: #4A96AD;
-	border-radius: 50%;
-    content: '';
-    width: 200px;
-    height: 200px;
+.img-responsive {margin:0 auto;}
+
+img[class*="bodyimage"]{
+	width: 37.4vw;
+	max-width: 100%;
+	padding-top: 10vh;
 }
 
-.spotlight1{
-    left: 10%;
-}
+/*.bodyimage1{*/
+/*}*/
 
-.spotlight2{
-	left: 25%;
-}
+/*.bodyimage2{*/
+/*}*/
 
-.spotlight3{
-	left: 40%;
+/*.bodyimage3{*/
+/*}*/
+
+.iconsText{
+	padding: 0;
+    text-align: center;
 }
 
 .iconsText p{
     /*font-size: 15px;*/
     font-size: 2em;
     text-align: center;
-	padding: 0 0 50px 0;
     color: #ffffff;
 }
 
-.verticalSpaceX{ 
-width:100%; 
-min-height:1px; 
-margin-top:40px; 
-margin-bottom:40px;  
-display:inline-block; 
-position:relative;
-}
+/*.colorizedbackground img{*/
+	/*width:100em;*/
+	/*height:50em;*/
+	/*position:absolute;*/
+	/*opacity: 0.5;*/
+			/*-moz-transform: scaleX(-1);*/
+        /*-o-transform: scaleX(-1);*/
+        /*-webkit-transform: scaleX(-1);*/
+        /*transform: scaleX(-1);*/
+        /*filter: FlipH;*/
+        /*-ms-filter: "FlipH";*/
+/*}*/
+/*.colorizedbackground{*/
+    /*color: #7D1935;*/
+	/*position:relative;*/
+	/*[>background: #5C97FF;<]*/
+	/*[>overflow: hidden;<]*/
+/*[>}<]*/
+/*[>.colorizedbackground:before {<]*/
+	/*[>content:' ';<]*/
+	/*[>display: block;<]*/
+	/*[>background-size:200em 200em;<]*/
+	/*[>background-size: auto;<]*/
+	/*[>max-height: 150px;<]*/
+	/*[>position:absolute;<]*/
+	/*[>top: 15em;<]*/
+	/*[>left: 40px;<]*/
+/*text-align:left;*/
+	/*[>opacity:.3;<]*/
+	/*z-index:10;*/
+	/*background-image:url("/colorizedbackground2.png");*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: 8% 0;*/
+	/*[>background-position: center center;<]*/
+	/*[>height: 50em;<]*/
+    /*[>width: auto;<]*/
+	/*[>max-width: 50em; <]*/
+    /*[>max-height: 100em;<]*/
+	/*[>width:100em;<]*/
+	/*[>height:150em;<]*/
+	/*[>-ms-background-size: cover;<]*/
+	/*[>-o-background-size: cover;<]*/
+	/*[>-moz-background-size: cover;<]*/
+	/*[>-webkit-background-size: cover;<]*/
+			/*[>-moz-transform: scaleY(-1);<]*/
+		/*[>-o-transform: scaleY(-1);<]*/
+		/*[>-webkit-transform: scaleY(-1);<]*/
+		/*[>transform: scaleY(-1);<]*/
+		/*[>filter: FlipH;<]*/
+		/*[>-ms-filter: "FlipH";<]*/
+	/*[>transform: rotate(90deg);<]*/
 
+	/*-ms-background-size: contain;*/
+	/*-o-background-size: contain;*/
+	/*-moz-background-size: contain;*/
+	/*-webkit-background-size: contain;*/
+/*}*/
+
+/*
+horizontal bar styling
 hr {
     display: block;
     height: 1px;
@@ -203,31 +228,38 @@ hr {
     z-index: 0;
 	top: 50px;
 }
+*/
 
 /*skills*/
 div[class^="skills"]{
 	background-color: #4A96AD;
     content: '';
+	padding-bottom: 3em;
 }
 
-.chartdesc1{
-    /*left: 10%;*/
+.bodyimageskills{
+	max-width: 100%;
+	min-width: 100%;
 }
 
-.chartdesc2{
-	/*left: 25%;*/
+.chartdivs {
+  min-width: 20vw;
+  height: 28vh;
+	border: 1px solid #000;
+	height: 30em;
 }
 
-.chartdesc3{
-	/*left: 40%;*/
-}
+.chartdiv3 {
 
+}
 
 /* contact button */
 .contact1{
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 100px;
+	min-height: 60vh;
+    padding: 30vh 0 30vh 0;
+    /*margin-top: 30px;*/
+    /*margin-bottom: 100px;*/
 }
 
 .btn{
@@ -238,140 +270,201 @@ div[class^="skills"]{
     color: #fff;
     letter-spacing: 1.3px;
 	position: relative;
+	transition: all 0.15s ease-in;
+    -webkit-transition: 0.15s ease;
 }
 
-.contact1 + #btn1{
-    padding: 10px 70px;
-    /*font-size: 18px;*/
-    font-size: 0.88em;
+#btn1{
+	font-size: 3.5em;
 }
 
-.contact2 + #btn2{
-    padding: 8px 30px;
-    /*font-size: 10px;*/
-    font-size: 0.8em;
-	display: inline;
-}
-
-.btn:hover{
-	/*background-color: rgba(0, 205, 134, 1);*/
+#btn1:hover{
 	background-color: #1e4849;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
     border: none;
     color: #fff;
+/*
+ * background: linear-gradient(hsl(207.5, 84.8%, 51%), hsla(207, 84%, 62%, 1));
+*/  transition: all 0.3s ease-out;
+    -webkit-transition: 0.3s ease;
+}
+
+#btn1:focus{
+	/*border: none;*/
+    outline: none;
+}
+
+#btn2{
+    font-size: 0.7em;
+    color: #fff;
+	background-color: rgba(74, 150, 173, 1);
+	max-width: 15vw;
+	min-height: 2vh;
+    border: 0.2em inset transparent;
+    border-radius: 10px;
+    letter-spacing: 1.3px;
+	margin-top: 0.5vh;
+}
+
+#btn2:hover{
+    border: 0.2em inset #7D1935;
 }
 
 .contact2{
+		padding: 5vh 0 10vh 0;
 		/*border-top: 6px solid #7D1935;*/
 		/*border-bottom: 6px solid #7D1935;*/
 		/*border-radius: 5px;*/
     /*background-color: #0b4b71;*/
     position: relative;
-    z-index: 99;
-    padding: 20px 0 20px 0px;
-    color: #72848f;
+	/*min-height:35em;*/
+    z-index: 50;
+	font-size: 2em;
 }
 
-/* field presenting my mail has to be an input to be copied
- * but css must consider it as a label
-*/
-#mailAddrHolder{
-    background: transparent !important;
-    border: none !important;
+.contact2 h2{
+	text-align:center;
+	/*padding: 0 0 3.5vh 0;*/
+	padding: 4vh 0 3vh 0;
 }
 
-
-
-.footer{
-	background: #7D1935;
-    position: static;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: #F5F3EE;
-    font-size: 1.5em;
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 2em;
-    margin-top: -2em;
-    /*text-align: center;*/
-	/*background-color: rgba(0, 0, 0, 0.5);*/
-}
-
-/* use media queries to change icons sizes in small devices */
-@media (max-width: 768px){
-    .bodyimage{
-        height: 40px;
-    }
-    .brand{
-        /* width: 40px; */
-        height: 30px;
-    }
-    .iconsText p{
-    	font-size: 0.875em;
-    }
-	.verticalSpaceX{ 
-			width:100%; 
-			min-height:0; 
-			margin-top:0; 
-			margin-bottom:0;  
-			display:none; 
-			position:relative;
-	}
-
-}
-
-/* element hover animations */
-
-.contact2 li{
-	transition: background-color 0.3s ease-in;
-	position:relative;
-/* margin:25px 2% 0 2%; */
-/* display: inline-block; */
-	list-style-type: none;
+.shortbrief{
+	/*margin-top:10em;*/
+	padding: 2vh 0 0 0;
+	font-weight: bold;
+    /*color: #72848f;*/
+    color: #7D1935;
 	text-align: center;
-	padding: 5px;
-/* background-color: #E7DAC6; */
-/* width: 15%; */
 }
-.contact2 li:hover{background-color:transparent;}
 
-.contact2 li:before {
-    content: "";
-    height: 0px;
-    background-color: black;
-    width: 100%;
-    position: absolute;
-    left: 0; top: -3px;
+.shortbrief p{
+		margin-left: 1vw;
+		margin-right: 1vw;
+}
+
+.contact2 .readContacts{
+		padding-top: 8vh;
+}
+
+.contact2 ul{
+	/*transition: background-color 0.3s ease-in;*/
+    /*-webkit-transition: background-color 0.3s ease;*/
+	position:relative;
+	list-style-type: none;
+	padding: 0 0 3vh 0;
+	margin: 0;
+}
+
+.contact2 ul li input{
+	/*margin-left: 10%;*/
+	text-align: center;
+}
+
+/*.contact2 li:hover{background-color:transparent;}*/
+
+/*.contact2 li:before {*/
+    /*content: "";*/
+    /*height: 0px;*/
+    /*background-color: black;*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*left: 0; top: -3px;*/
     
-    transition: height 300ms;
-}
+    /*transition: height 300ms;*/
+/*}*/
 
-.contact2 li:after {
-    content: "";
-    height: 0px;
-    background-color: black;
-    width: 100%;
-    position: absolute;
-    left: 0; bottom: -3px;
+/*.contact2 li:after {*/
+    /*content: "";*/
+    /*height: 0px;*/
+    /*background-color: black;*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*left: 0; bottom: -3px;*/
     
-    transition: height 300ms;
+    /*transition: height 300ms;*/
+/*}*/
+
+/*.contact2 li:hover:before{height: 6px;}*/
+/*.contact2 li:hover:after{height: 6px;}*/
+
+.contact2 .realcontact{
+	text-align: left;
+    color: #4A96AD;
+    /*padding: 10vh 0 0 0;*/
+	padding: 2vh 0 0 0;
+    /*width: 200px;*/
+    /*height: 150px;   */
 }
 
-.contact2 li:hover:before{height: 6px;}
-.contact2 li:hover:after{height: 6px;}
+.realcontact form{
+    padding: 1.2vh 1.2vw 1.2vh 1.2vw;
+	margin-left: 1vw;
+    border-radius: 15px;
+    border: 0.6vw solid #4A96AD;
+    background-color: #fff;
+}
 
-.contact2 table>td{
+.realcontact table>td{
 	/* position:relative; */
 	/* text-align: left; */
 	/* padding: 5px; */
-    width: 80%;
-	size:30;
+    /*width: 80%;*/
+	/*size:30;*/
     /* clear: both; */
 }
 
+/*form buttons*/
+.realcontact input, .realcontact textarea{
+    border: 0.1em solid #4A96AD;
+}
+
+/*input fields*/
+form input, form textarea{
+	width: 100%;
+    border-radius: 5px;
+}
+
+form input{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+form textarea{
+	height: 13em;
+}
+
+/*form submit buttons*/
+input[type="submit"], input[type="reset"]{
+	width: 7vw;
+	max-width: 40em;
+	min-height: 2vh;
+    border: 0.2em inset transparent;
+    border-radius: 10px;
+    letter-spacing: 1.3px;
+	color: #fff;
+	font-size: 0.7em;
+}
+
+input[type="submit"]{
+	background-color: #4A96AD;
+	margin-left: 10vw;
+}
+
+input[type="reset"]{
+	background-color: rgba(74, 150, 173, 0.7);
+	margin-left: 3vw;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    border: 0.2em inset #7D1935;
+    color: #fff;
+}
+
+.btn, input[type="reset"]:focus, input[type="submit"]:focus{
+    outline: none;
+}
+
 /*progressive underline effect*/
+/*
 .lineex {
 	position: relative;
     text-decoration: none;
@@ -390,9 +483,65 @@ div[class^="skills"]{
     width: 30px;
     margin-right: 9px;
 }
+*/
 
-.address
-{
+/* field presenting my mail has to be an input to be copied
+ * but css must consider it as a label
+*/
+#mailAddrHolder{
+    background: transparent !important;
+    border: none !important;
+}
+
+/*div[class^="bars"]{*/
+	/*height: 0.8em;*/
+	/*[>border-bottom-right-radius: 20px;<]*/
+	/*[>border-bottom: 6px solid #7D1935;<]*/
+	/*border-radius: 20px;*/
+	/*[>background-image:url("/colorizedbackground2.png");<]*/
+	/*background-color: #7D1935;*/
+	/*[>background-repeat: no-repeat;<]*/
+	/*[>background-position: 15% 0;<]*/
+	/*[>background-size: 5em 1em;<]*/
+/*}*/
+
+/*.barsL{*/
+	/*width: 18em;*/
+	/*margin: 9% 0 0 28%;*/
+/*}*/
+
+/*.barsM{*/
+	/*width: 10em;*/
+	/*margin: 9% 0 0 37%;*/
+/*}*/
+
+
+.footer{
+	background: #7D1935;
+    position: absolute;
+	bottom: 0;
+    width: 100%;
+    color: #F5F3EE;
+    height: 4em;
+	/*top: 0px;*/
+	/*bottom: 0px;*/
+    /*padding: 0em 1em 0 0;*/
+	/*padding: 0;*/
+}
+
+.footer p{
+    font-size: 1.5em;
+	right: 1em;
+	top: 0.6em;
+	/*bottom: 0px;*/
+	/*overflow: auto;*/
+    /*padding: -5px 0 0 0;*/
+    position: absolute;
+    color: #F5F3EE;
+	/*border-top: 0.3vh solid #fff;*/
+}
+
+.address{
     display:none;
     visibility:hidden;
 }
@@ -420,12 +569,66 @@ or expand sooner
     visibility: visible;
 }
 
-.chartdivs {
-  min-width: 200px;
-  height: 300px;
+#mailerMsg::placeholder {
+    color: red;
+    opacity: 0.7; /* Firefox */
 }
 
-/* On ajoute un coeur avant les liens */
-/*a:before {
-  content: "♥";
-}*/
+#mailerMsg:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: red;
+}
+
+#mailerMsg::-ms-input-placeholder { /* Microsoft Edge */
+   color: red;
+}
+
+@media (max-device-width:768px){
+}
+/* use media queries to change icons sizes in small devices */
+@media (max-width: 768px){
+	h1{
+		font-size: 2em;
+	}
+    .bodyimage{
+        height: 40px;
+    }
+    .brand{
+        /* width: 40px; */
+        height: 30px;
+    }
+    .iconsText p{
+    	font-size: 0.875em;
+    }
+	.jumbotron{
+	    padding: 30vh 0 25vh 0;
+	}
+	.contact1{
+		min-height: 50vh;
+    	padding: 25vh 0 25vh 0;
+	}
+	#btn2{
+		max-width: 60vw;
+	}
+	.contact2 .readContacts{
+		padding-top: 8vh;
+	}
+	form input, form textarea{
+		width: 60vw;
+	}
+	input[type="submit"], input[type="reset"]{
+		width: 30vw;
+	}
+	.barsL{
+		width: 45vw;
+		/*margin: 9% 0 0 27%;*/
+	}
+
+	.barsM{
+		width: 25vw;
+		/*margin: 9% 0 0 38%;*/
+	}
+	.footer{
+	    height: 7vh;
+	}
+}
+
