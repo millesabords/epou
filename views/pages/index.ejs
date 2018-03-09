@@ -4,7 +4,8 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body onload="loadCharts()">
+<body>
+<!--<body onload="loadCharts()">-->
 
   <% include ../partials/nav.ejs %>
 
@@ -53,7 +54,6 @@
   <div class="contact1 mainSections" id="about">
     <div class="container">
       <a href="#contact" class="btn" id="btn1">Get in touch</a>
-	  <!-- <span class="tooltiptext">contact form</span> -->
     </div>
   </div>
 
@@ -137,7 +137,7 @@ Resume / CV:&emsp;
         <div class="col-md-5">
           <div class="realcontact">
           <h2 >Leave a message</h2>
-<form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()" class="contact_form">
+<form action='/contactForm'  method='post' name='contactForm' onsubmit="cvalidateForm()" id="contact_form">
   <table style="width:100%;">
     <tr>
       <td align="left"><label for="name">Name:</label></td>
@@ -170,8 +170,9 @@ Resume / CV:&emsp;
       </div><!-- RealContact -->
 	  <!--<div class="barsL"></div>-->
 	  <!--<div class="barsM"></div>-->
-    </div><!-- col-md-5 -->
+	  <span id="formResult" class="formresult">Message sent.<br> You will be contacted asap.<br> Thank you.</span>
 
+	  </div><!-- col-md-5 -->
 	  </div><!-- Row -->
     </div><!-- Container-fluid -->
 </div><!-- Contact -->

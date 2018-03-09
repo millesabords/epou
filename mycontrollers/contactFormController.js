@@ -55,8 +55,8 @@ const userMailerSchema = Joi.object({
 
 module.exports = function(req, res){
 
-  console.log('first controller');
 /*
+  console.log('first controller');
   var requiredFields = ['name', 'email'];
   var reply='';
   reply += "Your name is" + req.body.mailerName;
@@ -67,9 +67,7 @@ module.exports = function(req, res){
 */
  try {
   const ret = Joi.validate(req.body, userMailerSchema, {
-    // return an error if body has an unrecognised property
     allowUnknown: false,
-    // return all errors a payload contains, not just the first one Joi finds
     abortEarly: false
   });
 
@@ -127,6 +125,13 @@ module.exports = function(req, res){
 //	  );
 //	  
 
+  var userip = "";
+  if(typeof req.headers['x-forwarded-for'] !== 'undefined')
+	userip = req.headers['x-forwarded-for'].split(',').pop();
+  else
+	userip = req.connection.remoteAddress ||
+         req.socket.remoteAddress ||
+         req.connection.socket.remoteAddress;
 
   let fileSizeInMegabytes = 0.0;
   if (fs.existsSync(filename)) {
@@ -142,7 +147,11 @@ module.exports = function(req, res){
         //replace(/\..+/, '');
 		fs.appendFile(filename,
 	     '----------------------------------------\n' +
-	     '\ndata appended on date: ' + curDate + '\n' + req.body.mailerName, (err)=> {if (err) throw err;});
+	     '\ndata appended on date: ' + curDate +
+	     ' from user at: ' + userip + '\n' +
+	     req.body.mailerName + '(' + req.body.mailerMail + ')\n' +
+		 req.body.mailerMsg + '\n',
+		(err)=> {if (err) throw err;});
        console.log('The "data to append" was appended to file: ' + filename);
   }
 //  res.json(200);

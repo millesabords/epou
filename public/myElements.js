@@ -91,19 +91,22 @@ function onScroll(event){
 function cvalidateForm(){
    let vname = document.forms["contactForm"]["mailerName"].value,
    	vmail = document.forms["contactForm"]["mailerMail"].value,
-   	vmesg = document.forms["contactForm"]["mailerMessage"].value;
-   if (!validator.isEmail(vmail)  ||
-	!validator.isAlphanumeric(vname) ||
-	!vmesg.length > 0 || !vmesg.length < 5000){
-       alert("error in the input fields");
-       return false;
-   }
+   	vmesg = document.forms["contactForm"]["mailerMsg"].value;
+	
+	//if (document.getElementById("id1").validity.rangeOverflow) {
+        var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!email_filter.test(vmail)) {
+    //document.getElementById("formresult").innerHTML = txt;
+//var curFormResult = document.getElementById("formresult");
+//curFormResult.classList.remove("formvalidated");
+//curFormResult.classList.add("formnotvalidated");
+//curFormResult.innerHTML = "Form error, message not sent.";
+            document.forms["contactForm"]["mailerMail"].focus;
+            return false;
+        }
    return true;
 }
-
- /*function scrollTo(hash) {
-    location.hash = "#" + hash;
-}*/
 
 /**
  * animated href scroll
@@ -143,16 +146,52 @@ $("body").on("click", "a", scroll_if_anchor);
 //todo: finish with feedback message when form has been succesfully submitted (or not)
 //var formProcessed = "{{formProcessed}}";
 //if(typeof formProcessed === 'undefined'){
-console.log("value of formProcessed=" + formProcessed + $("formProcessed")); 
-if(formProcessed === "true"){
-   scrollTop(contactForm);
-   $('body').append('<div id="alert">ALL data was saved</div>');
-   $('#alert').fadeOut('slow')
-	console.log("defined");
+console.log("value of formProcessed=" + formProcessed + $("formProcessed").value); 
+
+
+if(formProcessed.startsWith("true")){
+window.scrollTo(0,document.body.scrollHeight);
+	//document.querySelector('#contact_form').scrollIntoView({ 
+  //behavior: 'smooth' });
+    //window.location.hash = "#contact_form";
+   //$('body').append('<div id="alert">ALL data was saved</div>');
+   //$('#alert').fadeOut('slow')
+//$('#formresult').toggleClass('formvalidated');
+//var curFormResult = $("#formResult");//document.getElementById("formResult");
+////curFormResult.classList.remove("formnotvalidated");
+////curFormResult.classList.add("formvalidated");
+
+//curFormResult.innerHTML = "Message received.";
+//curFormResult.css({
+    //'background-color': 'green',
+	//'visibility': 'visible',
+		//'content': 'tyopla',
+	//'opacity': '1',
+	//'-webkit-transition': 'opacity 3s ease-in',
+	//'transition': 'opacity: 3s ease-in'
+//});
+
+//var fade_out = function() {
+  //$("#formResult").delay(5000).fadeOut().empty();
+//}
+//var fade_in = function() {
+  //$("#formResult").fadeIn(0, fade_out);
+//}
+//fade_in();
+var myfadeout = function() {
+  $("#formResult").css({
+	'opacity': '0',
+	'visibility': 'hidden',
+	'transition': 'opacity 3s linear, visibility 5s ease-in'
+  });
 }
+$("#formResult").css({
+	'opacity': '1',
+	'visibility': 'visible'
+});
 
+setTimeout(myfadeout, 5000);
 
-/*$('.selector').click(function(e){*/
-    /*$(this).toggleClass('new-class');*/
-    /*e.preventDefault();*/
-/*});*/
+    console.log("defined");
+window.scrollTo(0,document.body.scrollHeight);
+}

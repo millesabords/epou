@@ -1,3 +1,13 @@
+my process for the charts 'amcharts': Do the following steps using views/pages/index.ejs file
+- uncomment bodyonload at the beginning
+- uncomment script myCharts inclusion at the end
+- comment imgs in skillsSets div
+- uncomment chartdivs classes in skillsSets div
+- modify file public/myCharts.js at will,
+- reload page in browser and save charts using any necessary means
+- use inkscape to turn modified charts back into 3 images again
+
+
 docker container run -d -p 5163:5050 -v dockershared01:/usr/src/app/contacts millesabords/pressitenode4
 ls /var/lib/docker/volumes/...
 

@@ -1,5 +1,4 @@
--change times font
-- revise global design, mouaaaahhhh
+- revise webdev siklls chart, nodejs should be more important, html should be less important...
 - delay printing of hidden parts like chartjs using methods helene spoke about
 - replace validator broken system with express-validator instead
 - add pm2 to docker image for daemon monitoring

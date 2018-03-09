@@ -233,8 +233,13 @@ hr {
 /*skills*/
 div[class^="skills"]{
 	background-color: #4A96AD;
-    content: '';
 	padding-bottom: 1rem;
+	position: relative;
+}
+
+.skillsSets img{
+	padding: 0;
+	margin: 0;
 }
 
 .abilities{
@@ -410,7 +415,7 @@ div[class^="skills"]{
 }
 
 .realcontact table tr{
-	 position:relative; 
+	 /*position: relative; */
 	/* text-align: left; */
 	/* padding: 5px; */
     /*width: 80%;*/
@@ -428,9 +433,6 @@ form input, form textarea{
 	width: 100%;
 	max-width: 100%;
     border-radius: 5px;
-}
-
-form input{
 	margin-top: 3px;
 	margin-bottom: 3px;
 }
@@ -558,24 +560,6 @@ If you want to keep the collapsed a little longer you can adjust it like such:
 or expand sooner
 @grid-float-breakpoint:     @screen-phone (480px break-point) */
 
-.tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
-	/*position: absolute;*/
-	/*z-index: 1;*/
-}
-
-.contact1:hover .tooltiptext {
-    visibility: visible;
-}
-
 #mailerMsg::placeholder {
     color: red;
     opacity: 0.7; /* Firefox */
@@ -588,6 +572,27 @@ or expand sooner
 #mailerMsg::-ms-input-placeholder { /* Microsoft Edge */
    color: red;
 }
+
+#formResult{
+	visibility: hidden;
+	opacity: 0;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+	display:inline-block;
+    border-radius: 6px;
+    margin: 2rem 10% 0 10vw;//apparently no need to add responsiveness
+}
+
+.formvalidated{
+	/*visibility: visible;*/
+}
+
+/*.formnotvalidated{*/
+	/*content: "waiting for contact form to be filled and submitted...";*/
+    /*background-color: red;*/
+	/*text: "Error, message not sent.";*/
+/*}*/
 
 @media (max-device-width:768px){
 }
