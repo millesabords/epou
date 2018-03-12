@@ -149,7 +149,7 @@ module.exports = function(req, res){
 	     '----------------------------------------\n' +
 	     '\ndata appended on date: ' + curDate +
 	     ' from user at: ' + userip + '\n' +
-	     req.body.mailerName + '(' + req.body.mailerMail + ')\n' +
+	     req.body.mailerName + ' (' + req.body.mailerMail + ')\n' +
 		 req.body.mailerMsg + '\n',
 		(err)=> {if (err) throw err;});
        console.log('The "data to append" was appended to file: ' + filename);

@@ -1,4 +1,5 @@
-- revise webdev siklls chart, nodejs should be more important, html should be less important...
+- replace file writing (from contact messages) by mongodb managed-data
+- check if top-down auto scrolling after form validated problem still occurs, even sometimes
 - delay printing of hidden parts like chartjs using methods helene spoke about
 - replace validator broken system with express-validator instead
 - add pm2 to docker image for daemon monitoring
