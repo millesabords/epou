@@ -1,3 +1,5 @@
+
+
 my process for the charts 'amcharts': Do the following steps using views/pages/index.ejs file
 - uncomment bodyonload at the beginning
 - uncomment script myCharts inclusion at the end
@@ -9,8 +11,87 @@ my process for the charts 'amcharts': Do the following steps using views/pages/i
 
 
 docker container run -d -p 5163:5050 -v dockershared01:/usr/src/app/contacts millesabords/pressitenode4
+
 ls /var/lib/docker/volumes/...
 
+
+
+
+ --deprecated--
+
+- docker build --tag truc1 .
+- docker container run -d -p 3001:3000 truc1
+- netstat -plnt #to see the mess with open tcp ports
+- docker-compose up
+
+# mevn-stack
+
+> A Vue.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+#maybe need to cd node_modules and ln -s ../myroutes . and ln -s ../mymodels .
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+following tutorial at: https://www.djamware.com/post/5a1b779f80aca75eadc12d6e/mongo-express-vue-nodejs-mevn-stack-crud-web-application
+- for routes folder, you may have to announce it to npm packaging system:
+ -> $ cd routes; sudo npm link; cd ..; npm link routes; chown -R ouam:ouam /usr/lib/node_modules/routes; remove package-lock and add "routes":"*" in package.json dependancies section and redo npm install
+- for mogoose: remove 'useMongoClient' directive in app.js
+- for mongodb related stuff:
+maybe modify mongo stuff: authentication, ssl, host/port: mongo --host 127.0.0.1:27017
+
+start mongodb (server) first and then mongo (CLI client for init and tests...):
+$ chmod g+w /var/lib/mongodb (before )
+$ sudo passwd mongodb ... // change mongodb user password
+$ sudo usermod -a -G mongodb ouam ...// add mongodb group to me
+$ sudo chmod g+w /var/log/mongodb/mongodb.log
+$ sudo chmod g+w /var/log/mongodb
+check that dbpath points to '/var/lib/mongodb' in /etc/mongodb.conf file and then:
+$ sudo service mongodb restart
+$ mongo
+use mven; //will create empty database 'mevn'
+db.createUser({user: "mynewuser", pwd: "myuser123", roles: [ "readWrite", "dbAdmin" ] });
+db.movie.insert({"name":"whatever"})
+
+dockerization:
+docker-compose up -d
+curl -i localhost:3001
+docker exec -it mongo bash
+check in mongo if paths lead to existing host db "mven" with existing collections (use meven; show collections in mongo)
+docker-compose rm -fv mongodb -> delete volume with db created (careful) or use docker system prune
+issues maybe with paths, ports, auths...
+db appears to be persistent (adter down and re up, users still there...)
+build 2 images separately and create a new docker-compose.yml for production that doesn't build but uses created images
+when everything rocks, test with json more correctly formatted data than: curl -X POST -H "Content-type: application/json" http://localhost:3000/data/into/db -d '[ { "a": 1 }, { "b": 2 }, { "c": 3 } ]'
+
+setups:
+$ ctags -R static/ src/ myroutes/ mymodels/ *.js --tag-relative=yes
+gvim javascript live debugging: ":Codi"
+
+route debugging: $ DEBUG=express:* node truc.js (or put it in package.json scripts directives)
 To daemonize, install pm2 and do:
 $ pm2 start app.js
 $ pm2 startup
