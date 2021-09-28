@@ -8,6 +8,7 @@
   "main": "app.js",
   "scripts": {
     "_comment1": "preinstall: npm ln myroutes ../myroutes/; npm ln mycontrollers ../mycontrollers/",
+    "xxxxxpreinstall": "npm install ../myroutes ../mycontrollers ",
     "start": "node app.js",
     "test": "node inspect app.js"
   },
