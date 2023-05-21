@@ -1,6 +1,7 @@
-2021:
+2023:
 - dockerization abandonned temporary because there seems to be a problem redirecting (iptables issue, apache general conf issue, apache site conf issue, docker geenral conf issue, docker container issue, npm issue, node issue, dependancy issue...???? -> web development is such a mess)
 - for daemoniztion, use pm2, its more straightforward than anything else: pm2 start app.js; pm2 list; pm2 save; pm2 restart -> copy paste on cmd line and exec; reboot
+- redo ttlsization for https certifs, ah strasbourg
 
 
 my process for the charts 'amcharts': Do the following steps using views/pages/index.ejs file
